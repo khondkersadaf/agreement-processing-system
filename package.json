@@ -1,7 +1,7 @@
 {
-  "name": "legal-flow",
+  "name": "silq-legal-manager",
   "version": "1.0.0",
-  "description": "LegalFlow — Agreement management system for business, legal, and CXO teams. Supports request tracking, document versioning, approval workflows, and file uploads.",
+  "description": "Silq Legal Manager — Agreement management system for business, legal, and CXO teams. Supports request tracking, document versioning, approval workflows, and file uploads.",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
