@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F7F8FA;
+    color: #111827;
+  }
+  /* Thin, tasteful scrollbar */
+  ::-webkit-scrollbar          { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track    { background: transparent; }
+  ::-webkit-scrollbar-thumb    { background: #D1D5DB; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+}
+
+@layer components {
+  /* ── Input system ──────────────────────────────────────── */
+  .lf-input {
+    @apply w-full px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white
+           text-sm text-gray-900 font-sans outline-none leading-relaxed
+           placeholder:text-gray-400
+           hover:border-gray-300
+           focus:border-brand-400 focus:shadow-[0_0_0_3px_rgba(46,189,177,0.14)]
+           disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed
+           transition-[border-color,box-shadow] duration-150;
+  }
+  .lf-input-error {
+    @apply border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.14)];
+  }
+
+  /* ── Primary action button ─────────────────────────────── */
+  .lf-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5
+           rounded-lg border-none bg-brand-500 text-white text-sm font-semibold
+           cursor-pointer shadow-btn leading-none tracking-[0.01em]
+           hover:brightness-105 hover:-translate-y-px
+           active:scale-[0.975]
+           disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed
+           disabled:shadow-none disabled:translate-y-0 disabled:brightness-100
+           transition-[filter,transform,box-shadow] duration-150;
+  }
+
+  /* ── Ghost / secondary button ──────────────────────────── */
+  .lf-btn-ghost {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg
+           border border-gray-200 bg-white text-gray-600 text-sm font-medium
+           cursor-pointer hover:bg-gray-50 hover:border-gray-300
+           active:scale-[0.975]
+           transition-[background,border-color,transform] duration-150;
+  }
+
+  /* ── Stat card hover ───────────────────────────────────── */
+  .lf-stat-card {
+    @apply transition-[transform,box-shadow] duration-200 rounded-xl cursor-pointer
+           hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)];
+  }
+
+  /* ── Request list item ─────────────────────────────────── */
+  .lf-req-item {
+    @apply rounded-xl cursor-pointer transition-colors duration-100
+           hover:bg-gray-50;
+  }
+}
